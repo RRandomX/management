@@ -3,18 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
+    <link rel="stylesheet" href="../layui/layui.css">
+    <script src="../layui/layui.js"></script>
 </head>
 <body>
     <form action="/account/signon" method="post">
-        <p>Please enter your username and password.</p>
-
+        <label class="layui-label">Please enter your username and password.</label>
         <p>
-            Username:<input type="text" name="username"><br/>
-            Password:<input type="password" name="password">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">Username:</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="username" class="layui-input" autocomplete="off">
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">Password:</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="password" class="layui-input" autocomplete="off" >
+                </div>
+            </div>
+        </div>
         </p>
         <p th:if="${msg != null}" th:text="${msg}"></p>
-        <input type="submit" value="Login">
+        <input type="submit" value="Login" class="layui-btn ">
     </form>
 </body>
 </html>
+
