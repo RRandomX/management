@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<header th:replace="commen/top"></header>
+<div>
+    <a th:href="'/catalog/operateCategoryForm?categoryId='+${product.categoryId}">返回到<label th:text="${product.categoryId}"></label></a>
+</div>
+<div class="layui-body">
+    <form action="/catalog/updateProduct" method="post">
+        <h3>Product Information</h3>
+        <table class="layui-table">
+            <tr>
+                <td>Catalog Id:</td>
+                <td>
+                    <input type="text" th:field="${product.categoryId}" name="categoryId" readonly="readonly">
+                </td>
+            </tr>
+            <tr>
+                <td>Product Id:</td>
+                <td>
+                    <input type="text" th:field="${product.productId}" name="productId" readonly="readonly">
+                </td>
+            </tr>
+            <tr>
+                <td>Product Name:</td>
+                <td>
+                    <input type="text" th:field="${product.name}" name="name">
+                </td>
+            </tr>
+            <tr>
+                <td>Product Description:</td>
+                <td>
+                    <input type="text" th:field="${product.description}" name="description">
+                </td>
+            </tr>
+        </table>
+
+        <input type="submit" name="AddProduct"  class="layui-btn " value="修改">
+        <p th:if="${msg != null}" th:text="${msg}"></p>
+    </form>
+</div>
+<div>
+    <table>
+        <tr>
+            <th>Item ID</th>
+            <th>Name</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="item:${itemList}">
+            <td><a th:text="${item.itemId}" th:href="@{/catalog/operateItemForm?itemId=}+${item.itemId}">Item ID</a></td>
+            <td th:text="${item.name}">Item Name</td>
+            <td><a th:href="@{/catalog/deleteItem?itemId=}+${item.itemId}">delete</a></td>
+        </tr>
+    </table>
+</div>
+<div>
+    <a href="/catalog/addItemForm">增加item类型</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<header th:replace="commen/top"></header>
+
+<!--    <div>-->
+<!--        <table id="demo" lay-filter="test"></table>-->
+<!--    </div>-->
+</div>
+<div>
+    <h2>所有的</h2>
+    <div id="QuickLinks">
+        <a href="/catalog/operateCategoryForm?categoryId=FISH"><img src="../images/sm_fish.gif" /></a>
+        <img src="../images/separator.gif" />
+        <a href="/catalog/operateCategoryForm?categoryId=DOGS"><img src="../images/sm_dogs.gif" /></a>
+        <img src="../images/separator.gif" />
+        <a href="/catalog/operateCategoryForm?categoryId=REPTILES"><img src="../images/sm_reptiles.gif" /></a>
+        <img src="../images/separator.gif" />
+        <a href="/catalog/operateCategoryForm?categoryId=CATS"><img src="../images/sm_cats.gif" /></a>
+        <img src="../images/separator.gif" />
+        <a href="/catalog/operateCategoryForm?categoryId=BIRDS"><img src="../images/sm_birds.gif" /></a>
+        <a href="/catalog/operateCategoryForm?categoryId=a">shia</a>
+    </div>
+</div>
+<div>
+    <a href="/catalog/addCategoryForm">增加商品类型</a>
+</div>
+<!--<script>-->
+<!--    //JavaScript代码区域-->
+<!--    layui.use('element', function(){-->
+<!--        var element = layui.element;-->
+
+<!--    });-->
+
+<!--</script>-->
+<!--<script>-->
+<!--    layui.use('table', function(){-->
+<!--        var table = layui.table;-->
+
+<!--        //第一个实例-->
+<!--        table.render({-->
+<!--            elem: '#demo'-->
+<!--            ,height: 312-->
+<!--            ,url: '/account/getaccount' //数据接口-->
+<!--            ,page: true //开启分页-->
+<!--            ,parseData:function(res){-->
+<!--                console.log(res)-->
+<!--                return{-->
+<!--                    "code":0,-->
+<!--                    "msh":"",-->
+<!--                    "cont":100,-->
+<!--                    data:res-->
+<!--                }-->
+<!--            }-->
+<!--            ,cols: [-->
+<!--                [ //表头-->
+<!--                {field: 'id', title: 'ID', width:80, sort: true, fixed: 'left'}-->
+<!--                ,{field: 'firstname', title: '姓', width:80}-->
+<!--                ,{field: 'lastname', title: '名', width:80}-->
+<!--                ,{field: 'addr1', title: '地址1', width:80}-->
+<!--                ,{field: 'addr2', title: '地址2', width: 80}-->
+<!--                ,{field: 'city', title: '城市', width: 80}-->
+<!--                ,{field: 'state', title: 'state', width: 80}-->
+<!--                ,{field: 'country', title: '国家', width: 80}-->
+<!--                ,{field: 'phone', title: '电话', width: 80}-->
+<!--            ]-->
+<!--            ]-->
+<!--        });-->
+
+<!--    });-->
+<!--</script>-->
+</body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.csu.management.persistence.ItemMapper">
+    <select id="getItemListByProduct" parameterType="string" resultType="Item">
+        SELECT
+            I.ITEMID,
+            LISTPRICE,
+            UNITCOST,
+            SUPPLIER AS supplierId,
+            I.PRODUCTID AS "product.productId",
+            NAME AS "product.name",
+            DESCN AS "product.description",
+            CATEGORY AS "product.categoryId",
+            STATUS,
+            ATTR1 AS attribute1,
+            ATTR2 AS attribute2,
+            ATTR3 AS attribute3,
+            ATTR4 AS attribute4,
+            ATTR5 AS attribute5
+        FROM ITEM I, PRODUCT P
+        WHERE P.PRODUCTID = I.PRODUCTID
+        AND I.PRODUCTID = #{value}
+    </select>
+    <select id="getItem" parameterType="string" resultType="Item">
+        SELECT
+            I.ITEMID,
+            LISTPRICE,
+            UNITCOST,
+            SUPPLIER AS supplierId,
+            I.PRODUCTID AS "product.productId",
+            NAME AS "product.name",
+            DESCN AS "product.description",
+            CATEGORY AS "product.categoryId",
+            STATUS,
+            ATTR1 AS attribute1,
+            ATTR2 AS attribute2,
+            ATTR3 AS attribute3,
+            ATTR4 AS attribute4,
+            ATTR5 AS attribute5,
+            QTY AS quantity
+        FROM ITEM I, INVENTORY V, PRODUCT P
+        WHERE P.PRODUCTID = I.PRODUCTID
+        AND I.ITEMID = V.ITEMID
+        AND I.ITEMID = #{value}
+    </select>
+    <insert id="addItem" parameterType="Item">
+        INSERT INTO ITEM
+        (ITEMID,PRODUCTID,LISTPRICE,UNITCOST,SUPPLIER,STATUS,ATTR1,ATTR2,ATTR3,ATTR4,ATTR5)
+        VALUES
+        (#{itemId},#{productId},#{listprice},#{unitcost},#{supplier},#{status},#{attr1},#{attr2},#{attr3},#{attr4},#{attr5})
+    </insert>
+    <update id="updateItem" parameterType="Item">
+        UPDATE ITEM SET
+        ITEMID=#{itemId},PRODUCTID=#{productId},LISTPRICE=#{listprice},UNITCOST=#{unitcost},SUPPLIER=#{supplier},STATUS=#{status},ATTR1=#{attr1},ATTR2=#{attr2},ATTR3=#{attr3},ATTR4=#{attr4},ATTR5=#{attr5})
+        WHERE ITEMID=#{itemId}
+    </update>
+    <delete id="deleteItem">
+        DELETE FROM ITEM
+        WHERE ITEMID=#{itemId}
+    </delete>
+</mapper>

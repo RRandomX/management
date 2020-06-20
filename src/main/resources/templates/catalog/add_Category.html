@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header th:replace="commen/top"></header>
+    <div>
+        <a href="/catalog/main"  class="layui-btn ">返回到主界面</a>
+    </div>
+    <div>
+        <form action="/catalog/addCategory" method="post">
+            <h3>Category Information</h3>
+            <table class="layui-table">
+                <tr>
+                    <td>Category Id:</td>
+                    <td>
+                        <input type="text" name="categoryId">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Category Name:</td>
+                    <td>
+                        <input type="text" name="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Category Name:</td>
+                    <td>
+                        <input type="text" name="description">
+                    </td>
+                </tr>
+            </table>
+
+            <input type="submit" name="AddCategory" value="Add Category Information">
+        </form>
+    </div>
+</body>
+</html>

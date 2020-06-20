@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<header th:replace="commen/top"></header>
+    <div>
+        <a   class="layui-btn " href="/catalog/main">返回到主界面</a>
+    </div>
+    <div>
+        <form action="/catalog/updateCategory" method="post">
+            <h3>Category Information</h3>
+            <table class="layui-table">
+                <tr>
+                    <td>Category Id:</td>
+                    <td>
+                        <input type="text" th:field="${category.categoryId}" name="categoryId" readonly="readonly">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Category Name:</td>
+                    <td>
+                        <input type="text" th:field="${category.name}" name="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Category Description:</td>
+                    <td>
+                        <input type="text" th:field="${category.description}" name="description">
+                    </td>
+                </tr>
+            </table>
+    
+            <input type="submit" name="AddCategory" value="Add Category Information">
+            <a class="Button" th:href="'/catalog/deleteCategory?categoryId='+${category.categoryId}">删除该商品</a>
+        </form>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="product:${productList}">
+                <td><a th:text="${product.productId}" th:href="@{/catalog/operateProductForm?productId=}+${product.productId}">Product ID</a></td>
+                <td th:text="${product.name}">Product Name</td>
+                <td><a th:href="@{/catalog/deleteProduct?productId=}+${product.productId}">delete</a></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <a href="/catalog/addProductForm">增加product类型</a>
+    </div>
+</body>
+</html>

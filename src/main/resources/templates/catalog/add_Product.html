@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header th:replace="commen/top"></header>
+<div>
+<!--    <a th:href="'/catalog/operate_Category?categoryId='+${product.categoryId}">返回到上一层</a>-->
+    <a href="/catalog/main">返回</a>
+</div>
+<div>
+    <form action="/catalog/addProduct" method="post">
+        <h3>Product Information</h3>
+        <table class="layui-table">
+            <tr>
+                <td>Category Name:</td>
+                <td>
+                    <input type="text" name="categoryId">
+                </td>
+            </tr>
+            <tr>
+                <td>Product Id:</td>
+                <td>
+                    <input type="text" name="productId">
+                </td>
+            </tr>
+            <tr>
+                <td>Product Name:</td>
+                <td>
+                    <input type="text" name="name">
+                </td>
+            </tr>
+            <tr>
+                <td>Product Name:</td>
+                <td>
+                    <input type="text" name="description">
+                </td>
+            </tr>
+        </table>
+
+        <input type="submit" name="AddProduct" value="Add Product Information">
+        <p th:if="${msg != null}" th:text="${msg}"></p>
+    </form>
+</div>
+</body>
+</html>

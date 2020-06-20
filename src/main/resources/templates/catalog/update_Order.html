@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <header th:replace="commen/top"></header>
+    <div class="layui-body">
+        <form action="/catalog/updateOrder" method="post">
+            <h3>Order Information</h3>
+            <table class="layui-table">
+                <tr>
+                    <td>Order Id:</td>
+                    <td>
+                        <input type="text" th:field="${order.orderId}" name="orderId" readonly="readonly">
+                    </td>
+                </tr>
+                <tr>
+                    <td>User Id:</td>
+                    <td>
+                        <input type="text" th:field="${order.userId}" name="userId" readonly="readonly">
+                    </td>
+                </tr>
+<!--                <tr>-->
+<!--                    <td>ORDERDATE:</td>-->
+<!--                    <td>-->
+<!--                        <input type="text" th:field="${order.orderDate}" name="orderdate" readonly="readonly">-->
+<!--                    </td>-->
+<!--                </tr>-->
+                <tr>
+                    <td>SHIPADDR1:</td>
+                    <td>
+                        <input type="text" th:field="${order.shipaddr1}" name="shipaddr1" readonly="readonly">
+                    </td>
+                </tr>
+                <tr>
+                    <td>SHIPADDR2:</td>
+                    <td>
+                        <input type="text" th:field="${order.shipaddr2}" name="shipaddr2" readonly="readonly">
+                    </td>
+                </tr>
+                <tr>
+                    <td>SHIPCITY:</td>
+                    <td>
+                        <input type="text" th:field="${order.shipcity}" name="shipcity" readonly="readonly">
+                    </td>
+                </tr>
+                <tr>
+                    <td>SHIPSTATE:</td>
+                    <td>
+                        <input type="text" th:field="${order.shipstate}" name="shipstate" readonly="readonly">
+                    </td>
+                </tr>
+                <tr>
+                    <td>SHIPZIP:</td>
+                    <td>
+                        <input type="text" th:field="${order.shipzip}" name="shipzip">
+                    </td>
+                </tr>
+                <tr>
+                    <td>SHIPCOUNTRY:</td>
+                    <td>
+                        <input type="text" th:field="${order.shipcountry}" name="shipcountry">
+                    </td>
+                </tr>
+                <tr>
+                    <td>BILLADDR1:</td>
+                    <td>
+                        <input type="text" th:field="${order.billaddr1}" name="billaddr1">
+                    </td>
+                </tr>
+                <tr>
+                <tr>
+                    <td>BILLADDR2:</td>
+                    <td>
+                        <input type="text" th:field="${order.billaddr2}" name="billaddr2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>BILLCITY:</td>
+                    <td>
+                        <input type="text" th:field="${order.billcity}" name="billcity">
+                    </td>
+                </tr>
+                <tr>
+                    <td>BILLSTATE:</td>
+                    <td>
+                        <input type="text" th:field="${order.billstate}" name="billstate">
+                    </td>
+                </tr>
+                <tr>
+                    <td>BILLZIP:</td>
+                    <td>
+                        <input type="text" th:field="${order.billzip}" name="billzip">
+                    </td>
+                </tr>
+                <tr>
+                    <td>BILLCOUNTRY:</td>
+                    <td>
+                        <input type="text" th:field="${order.billcountry}" name="billcountry">
+                    </td>
+                </tr>
+                <tr>
+                    <td>COURIER:</td>
+                    <td>
+                        <input type="text" th:field="${order.courier}" name="courier">
+                    </td>
+                </tr>
+                <tr>
+                    <td>TOTALPRICE:</td>
+                    <td>
+                        <input type="text" th:field="${order.totalprice}" name="totalprice">
+                    </td>
+                </tr>
+                <tr>
+                    <td>billtofirstname:</td>
+                    <td>
+                        <input type="text" th:field="${order.billtofirstname}" name="billtofirstname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>billtolastname:</td>
+                    <td>
+                        <input type="text" th:field="${order.billtolastname}" name="billtolastname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>shiptofirstname:</td>
+                    <td>
+                        <input type="text" th:field="${order.shiptofirstname}" name="shiptofirstname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>shiptolastname:</td>
+                    <td>
+                        <input type="text" th:field="${order.shiptolastname}" name="shiptolastname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>creditcard:</td>
+                    <td>
+                        <input type="text" th:field="${order.creditcard}" name="creditcard">
+                    </td>
+                </tr>
+                <tr>
+                    <td>exprdate:</td>
+                    <td>
+                        <input type="text" th:field="${order.exprdate}" name="exprdate">
+                    </td>
+                </tr><tr>
+                <td>cardtype:</td>
+                <td>
+                    <input type="text" th:field="${order.cardtype}" name="cardtype">
+                </td>
+            </tr><tr>
+                <td>locale:</td>
+                <td>
+                    <input type="text" th:field="${order.locale}" name="locale">
+                </td>
+            </tr>
+
+            </table>
+
+            <input class="layui-btn" type="submit" name="AddProduct" value="修改">
+            <button class="layui-btn " type="button">返回</button>
+            <p th:if="${msg != null}" th:text="${msg}"></p>
+        </form>
+    </div>
+</body>
+</html>

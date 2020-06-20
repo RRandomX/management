@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <form action="/account/signon" method="post">
+        <p>Please enter your username and password.</p>
+
+        <p>
+            Username:<input type="text" name="username"><br/>
+            Password:<input type="password" name="password">
+        </p>
+        <p th:if="${msg != null}" th:text="${msg}"></p>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header th:replace="commen/top"></header>
+<div>
+    <!--    <a th:href="'/catalog/operate_Category?categoryId='+${product.categoryId}">返回到上一层</a>-->
+    <a href="/catalog/main">返回</a>
+</div>
+<div>
+    <form action="/catalog/addItem" method="post">
+        <h3>Item Information</h3>
+        <table class="layui-table">
+            <tr>
+                <td>Product Id:</td>
+                <td>
+                    <input type="text" name="productId">
+                </td>
+            </tr>
+            <tr>
+                <td>Item Id:</td>
+                <td>
+                    <input type="text" name="itemId">
+                </td>
+            </tr>
+            <tr>
+                <td>Item Name:</td>
+                <td>
+                    <input type="text" name="name">
+                </td>
+            </tr>
+            <tr>
+                <td>Listprice:</td>
+                <td>
+                    <input type="text" name="listprice">
+                </td>
+            </tr>
+            <tr>
+                <td>Unitcost:</td>
+                <td>
+                    <input type="text" name="unitcost">
+                </td>
+            </tr>
+            <tr>
+                <td>Supplier:</td>
+                <td>
+                    <input type="text" name="supplier">
+                </td>
+            </tr>
+            <tr>
+                <td>Status:</td>
+                <td>
+                    <input type="text" name="status">
+                </td>
+            </tr>
+            <tr>
+                <td>Attr1:</td>
+                <td>
+                    <input type="text" name="attr1">
+                </td>
+            </tr>
+            <tr>
+                <td>Attr2:</td>
+                <td>
+                    <input type="text" name="attr2">
+                </td>
+            </tr>
+            <tr>
+                <td>Attr3:</td>
+                <td>
+                    <input type="text" name="attr3">
+                </td>
+            </tr>
+            <tr>
+                <td>Attr4:</td>
+                <td>
+                    <input type="text" name="attr4">
+                </td>
+            </tr>
+            <tr>
+                <td>Attr5:</td>
+                <td>
+                    <input type="text" name="attr5">
+                </td>
+            </tr>
+        </table>
+
+        <input type="submit" name="AddItem" value="Add Item Information">
+        <p th:if="${msg != null}" th:text="${msg}"></p>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<header th:replace="commen/top"></header>
+<body>
+    <div id="searchOrder">
+
+    </div>
+    <div id="viewOrder">
+        <table class="layui-table">
+            <tr>
+                <td>Order ID</td>
+                <td>User ID</td>
+                <td>Order Date</td>
+                <td id="delete">&nbsp;</td>
+            </tr>
+            <tr th:each="order:${orderList}">
+                <td><a th:href="'/catalog/updateOrderForm?orderId='+${order.orderId}" th:text="${order.orderId}"></a> </td>
+                <td th:text="${order.userId}"></td>
+                <td th:text="${order.orderdate}"></td>
+<!--                <td><a th:href="@{/catalog/deleteOrder?orderId=}+${order.orderId}"></a></td>-->
+                <td><a th:href="'/catalog/deleteOrder?orderId='+${order.orderId}">delete</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
