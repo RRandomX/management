@@ -32,12 +32,12 @@
                 </tr>
             </table>
     
-            <input type="submit" name="AddCategory" value="Add Category Information">
-            <a class="Button" th:href="'/catalog/deleteCategory?categoryId='+${category.categoryId}">删除该商品</a>
+            <input type="submit" class="layui-btn layui-btn-normal" name="AddCategory" value="Add Category Information">
+            <a class="layui-btn layui-btn-normal" th:href="'/catalog/deleteCategory?categoryId='+${category.categoryId}">删除该商品</a>
         </form>
     </div>
     <div>
-        <table>
+        <table class="layui-table">
             <tr>
                 <th>Product ID</th>
                 <th>Name</th>
@@ -46,12 +46,12 @@
             <tr th:each="product:${productList}">
                 <td><a th:text="${product.productId}" th:href="@{/catalog/operateProductForm?productId=}+${product.productId}">Product ID</a></td>
                 <td th:text="${product.name}">Product Name</td>
-                <td><a th:href="@{/catalog/deleteProduct?productId=}+${product.productId}">delete</a></td>
+                <td><a th:href="@{/catalog/deleteProduct?productId=}+${product.productId}"  class="layui-btn ">delete</a></td>
             </tr>
         </table>
     </div>
     <div>
-        <a href="/catalog/addProductForm">增加product类型</a>
+        <a href="/catalog/addProductForm" class="layui-btn ">增加product类型</a>
     </div>
 </body>
 </html>

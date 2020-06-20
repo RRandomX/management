@@ -22,7 +22,7 @@
                 <td th:text="${order.userId}"></td>
                 <td th:text="${order.orderdate}"></td>
 <!--                <td><a th:href="@{/catalog/deleteOrder?orderId=}+${order.orderId}"></a></td>-->
-                <td><a th:href="'/catalog/deleteOrder?orderId='+${order.orderId}">delete</a></td>
+                <td><a th:href="'/catalog/deleteOrder?orderId='+${order.orderId}" class="layui-btn ">delete</a></td>
             </tr>
         </table>
     </div>

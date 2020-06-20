@@ -6,7 +6,7 @@
 <body>
 <header th:replace="commen/top"></header>
 <div>
-    <a th:href="'/catalog/operateProductForm?productId='+${product.productId}">返回到<label th:text="${product.productId}"></label></a>
+    <a th:href="'/catalog/operateProductForm?productId='+${product.productId}" class="layui-btn ">返回到<label th:text="${product.productId}"></label></a>
 </div>
 <div>
     <form action="/catalog/updateItem" method="post">
@@ -80,7 +80,7 @@
             </tr>
         </table>
 
-        <input type="submit" name="AddItem" value="修改">
+        <input type="submit" name="AddItem" value="修改" class="layui-btn ">
         <p th:if="${msg != null}" th:text="${msg}"></p>
     </form>
 </div>

@@ -6,9 +6,9 @@
 <body>
 <header th:replace="commen/top"></header>
 <div>
-    <a th:href="'/catalog/operateCategoryForm?categoryId='+${product.categoryId}">返回到<label th:text="${product.categoryId}"></label></a>
+    <a th:href="'/catalog/operateCategoryForm?categoryId='+${product.categoryId}" class="layui-btn "  >返回到<label th:text="${product.categoryId}"></label></a>
 </div>
-<div class="layui-body">
+<div>
     <form action="/catalog/updateProduct" method="post">
         <h3>Product Information</h3>
         <table class="layui-table">
@@ -43,7 +43,7 @@
     </form>
 </div>
 <div>
-    <table>
+    <table  class="layui-table">
         <tr>
             <th>Item ID</th>
             <th>Name</th>
@@ -52,12 +52,12 @@
         <tr th:each="item:${itemList}">
             <td><a th:text="${item.itemId}" th:href="@{/catalog/operateItemForm?itemId=}+${item.itemId}">Item ID</a></td>
             <td th:text="${item.name}">Item Name</td>
-            <td><a th:href="@{/catalog/deleteItem?itemId=}+${item.itemId}">delete</a></td>
+            <td><a th:href="@{/catalog/deleteItem?itemId=}+${item.itemId}" class="layui-btn ">delete</a></td>
         </tr>
     </table>
 </div>
 <div>
-    <a href="/catalog/addItemForm">增加item类型</a>
+    <a href="/catalog/addItemForm" class="layui-btn ">增加item类型</a>
 </div>
 </body>
 </html>
